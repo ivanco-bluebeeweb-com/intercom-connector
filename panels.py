@@ -170,6 +170,5 @@ async def intercom_center_panel(ctx, **kwargs) -> object:
     at session-init without that flag. Text is the shared canonical
     wording -- must stay identical across every app in this situation."""
     return ui.Empty(
-        title="Select an action",
-        message="Use the Intercom panel on the left, or ask Webbee to do something with Intercom.",
+        message="Select an action -- use the Intercom panel on the left, or ask Webbee to do something with Intercom.",
     )
