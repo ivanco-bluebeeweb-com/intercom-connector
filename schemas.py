@@ -45,6 +45,8 @@ class IntercomConnection(sdl.Entity):
 
 
 class IntercomConnectionList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[IntercomConnection] = Field(default_factory=list)
 
 
@@ -53,6 +55,7 @@ class DisconnectIntercomParams(BaseModel):
 
 
 class DeleteResult(sdl.Entity):
+    title: str = ""
     id: str = ""
     deleted: bool = False
 
@@ -116,6 +119,7 @@ class SearchContactsParams(BaseModel):
 
 
 class Contact(sdl.Entity):
+    title: str = ""
     id: str = ""
     role: str = ""
     email: str = ""
@@ -133,6 +137,8 @@ class Contact(sdl.Entity):
 
 
 class ContactList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Contact] = Field(default_factory=list)
     next_cursor: str = ""
     total_count: int = 0
@@ -151,6 +157,7 @@ class CreateContactNoteParams(BaseModel):
 
 
 class NoteEntry(sdl.Entity):
+    title: str = ""
     id: str = ""
     body: str = ""
     created_at: int = 0
@@ -158,6 +165,8 @@ class NoteEntry(sdl.Entity):
 
 
 class NoteList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[NoteEntry] = Field(default_factory=list)
 
 
@@ -223,6 +232,7 @@ class DeleteCompanyParams(BaseModel):
 
 
 class Company(sdl.Entity):
+    title: str = ""
     id: str = ""
     company_id: str = ""
     name: str = ""
@@ -238,6 +248,8 @@ class Company(sdl.Entity):
 
 
 class CompanyList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Company] = Field(default_factory=list)
     total_count: int = 0
 
@@ -326,6 +338,7 @@ class UntagConversationParams(BaseModel):
 
 
 class ConversationPart(sdl.Entity):
+    title: str = ""
     id: str = ""
     part_type: str = ""
     body: str = ""
@@ -354,6 +367,8 @@ class Conversation(sdl.Entity):
 
 
 class ConversationList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Conversation] = Field(default_factory=list)
     next_cursor: str = ""
     total_count: int = 0
@@ -413,6 +428,8 @@ class Ticket(sdl.Entity):
 
 
 class TicketList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Ticket] = Field(default_factory=list)
     next_cursor: str = ""
     total_count: int = 0
@@ -431,6 +448,7 @@ class CreateTicketTypeParams(BaseModel):
 
 
 class TicketType(sdl.Entity):
+    title: str = ""
     id: str = ""
     name: str = ""
     description: str = ""
@@ -440,6 +458,8 @@ class TicketType(sdl.Entity):
 
 
 class TicketTypeList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[TicketType] = Field(default_factory=list)
 
 
@@ -448,6 +468,7 @@ class ListTicketStatesParams(BaseModel):
 
 
 class TicketState(sdl.Entity):
+    title: str = ""
     id: str = ""
     category: str = ""
     label: str = ""
@@ -455,6 +476,8 @@ class TicketState(sdl.Entity):
 
 
 class TicketStateList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[TicketState] = Field(default_factory=list)
 
 
@@ -509,6 +532,8 @@ class Article(sdl.Entity):
 
 
 class ArticleList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Article] = Field(default_factory=list)
     total_count: int = 0
 
@@ -525,6 +550,7 @@ class CreateHelpCenterCollectionParams(BaseModel):
 
 
 class HelpCenterCollection(sdl.Entity):
+    title: str = ""
     id: str = ""
     name: str = ""
     description: str = ""
@@ -534,6 +560,8 @@ class HelpCenterCollection(sdl.Entity):
 
 
 class HelpCenterCollectionList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[HelpCenterCollection] = Field(default_factory=list)
 
 
@@ -578,6 +606,8 @@ class NewsItem(sdl.Entity):
 
 
 class NewsItemList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[NewsItem] = Field(default_factory=list)
 
 
@@ -596,6 +626,7 @@ class CreateMessageParams(BaseModel):
 
 
 class Message(sdl.Entity):
+    title: str = ""
     id: str = ""
     message_type: str = ""
     subject: str = ""
@@ -626,6 +657,7 @@ class SetAdminAwayParams(BaseModel):
 
 
 class Admin(sdl.Entity):
+    title: str = ""
     id: str = ""
     name: str = ""
     email: str = ""
@@ -634,6 +666,8 @@ class Admin(sdl.Entity):
 
 
 class AdminList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Admin] = Field(default_factory=list)
 
 
@@ -647,12 +681,15 @@ class GetTeamParams(BaseModel):
 
 
 class Team(sdl.Entity):
+    title: str = ""
     id: str = ""
     name: str = ""
     admin_ids: list[str] = Field(default_factory=list)
 
 
 class TeamList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Team] = Field(default_factory=list)
 
 
@@ -661,12 +698,15 @@ class ListAwayStatusReasonsParams(BaseModel):
 
 
 class AwayStatusReason(sdl.Entity):
+    title: str = ""
     id: str = ""
     label: str = ""
     emoji: str = ""
 
 
 class AwayStatusReasonList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[AwayStatusReason] = Field(default_factory=list)
 
 
@@ -689,6 +729,8 @@ class CreateDataAttributeParams(BaseModel):
 
 
 class DataAttribute(sdl.Entity):
+    id: str = ""
+    title: str = ""
     name: str = ""
     full_name: str = ""
     label: str = ""
@@ -698,6 +740,8 @@ class DataAttribute(sdl.Entity):
 
 
 class DataAttributeList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[DataAttribute] = Field(default_factory=list)
 
 
@@ -715,12 +759,16 @@ class ListDataEventsParams(BaseModel):
 
 
 class DataEvent(sdl.Entity):
+    id: str = ""
+    title: str = ""
     event_name: str = ""
     created_at: int = 0
     metadata: dict = Field(default_factory=dict)
 
 
 class DataEventList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[DataEvent] = Field(default_factory=list)
 
 
@@ -731,6 +779,8 @@ class CreateDataExportParams(BaseModel):
 
 
 class DataExportJob(sdl.Entity):
+    id: str = ""
+    title: str = ""
     job_identifier: str = ""
     status: str = ""
     download_url: str = ""
@@ -770,11 +820,14 @@ class DeleteTagParams(BaseModel):
 
 
 class Tag(sdl.Entity):
+    title: str = ""
     id: str = ""
     name: str = ""
 
 
 class TagList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Tag] = Field(default_factory=list)
 
 
@@ -788,6 +841,7 @@ class GetSegmentParams(BaseModel):
 
 
 class Segment(sdl.Entity):
+    title: str = ""
     id: str = ""
     name: str = ""
     created_at: int = 0
@@ -796,6 +850,8 @@ class Segment(sdl.Entity):
 
 
 class SegmentList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[Segment] = Field(default_factory=list)
 
 
@@ -804,6 +860,7 @@ class ListSubscriptionTypesParams(BaseModel):
 
 
 class SubscriptionType(sdl.Entity):
+    title: str = ""
     id: str = ""
     state: str = ""
     default_translation: str = ""
@@ -811,6 +868,8 @@ class SubscriptionType(sdl.Entity):
 
 
 class SubscriptionTypeList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[SubscriptionType] = Field(default_factory=list)
 
 
@@ -844,6 +903,8 @@ class ReplyToFinParams(BaseModel):
 
 
 class FinConversationTurn(sdl.Entity):
+    id: str = ""
+    title: str = ""
     conversation_id: str = ""
     reply: str = ""
     sources: list[str] = Field(default_factory=list)
@@ -884,6 +945,8 @@ class ExternalPage(sdl.Entity):
 
 
 class ExternalPageList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[ExternalPage] = Field(default_factory=list)
 
 
@@ -892,6 +955,7 @@ class ListContentImportSourcesParams(BaseModel):
 
 
 class ContentImportSource(sdl.Entity):
+    title: str = ""
     id: str = ""
     status: str = ""
     url: str = ""
@@ -899,6 +963,8 @@ class ContentImportSource(sdl.Entity):
 
 
 class ContentImportSourceList(sdl.Entity):
+    id: str = ""
+    title: str = ""
     items: list[ContentImportSource] = Field(default_factory=list)
 
 
@@ -917,6 +983,7 @@ class CreateMessageParams(BaseModel):
 
 
 class MessageResult(sdl.Entity):
+    title: str = ""
     id: str = ""
     message_type: str = ""
     subject: str = ""
@@ -935,6 +1002,7 @@ class AuditWorkspaceParams(BaseModel):
 
 
 class AuditRow(sdl.Entity):
+    id: str = ""
     conversation_id: str = ""
     title: str = ""
     state: str = ""
@@ -945,6 +1013,8 @@ class AuditRow(sdl.Entity):
 
 
 class AuditReport(sdl.Entity):
+    id: str = ""
+    title: str = ""
     sampled: int = 0
     open_count: int = 0
     unassigned_open_count: int = 0
@@ -963,6 +1033,8 @@ class StaleConversationsParams(BaseModel):
 
 
 class StaleConversationsResult(sdl.Entity):
+    id: str = ""
+    title: str = ""
     scanned: int = 0
     stale_count: int = 0
     rows: list[AuditRow] = Field(default_factory=list)
